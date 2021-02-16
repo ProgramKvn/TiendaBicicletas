@@ -1,0 +1,36 @@
+﻿@page
+@model TiendaBicicleta.Web.Pages.InventarioBicicletasModel
+@{
+}
+
+<h1>Inventario de bicicletas</h1>
+
+<a class="btn btn-sm btn-success" asp-page="/RegistrarBicicleta">Registrar bicicleta</a>
+<br />
+<br />
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Modelo</th>
+            <th>Precio</th>
+            <th>Color</th>
+            <th>Options</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.InventarioBicicletas)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Modelo</td>
+                <td>@item.Precio</td>
+                <td>@item.Color</td>
+                <td>
+                    <a class="btn btn-sm btn-info" asp-area="" asp-page="/EditarInventario" asp-route-id="@item.Id">Editar</a>
+                    <a class="btn btn-sm btn-info" asp-area="" asp-page="/EliminarRegistro" asp-route-id="@item.Id">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
