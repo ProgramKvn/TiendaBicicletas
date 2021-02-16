@@ -9,28 +9,25 @@ using TiendaBicicleta.Models;
 
 namespace TiendaBicicleta.Web.Pages.Clientes
 {
-    public class RegistrarClienteModel : PageModel
+    public class EliminarRegistroClienteModel : PageModel
     {
         private readonly IClienteRepository _clienteRepository;
 
-        public RegistrarClienteModel(IClienteRepository clienteRepository)
+        public EliminarRegistroClienteModel(IClienteRepository clienteRepository)
         {
             _clienteRepository = clienteRepository;
         }
+
         [BindProperty]
         public Cliente Cliente { get; set; }
-        public void OnGet()
+        public IActionResult OnPost(int Id)
         {
-        }
-        public IActionResult OnPost()
-        {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-            _clienteRepository.Insertar(Cliente);
+            var RegistroSeleccionado = _clienteRepository.GetById(Id);
+            if (RegistroSeleccionado == null)
+                return NotFound();
+
+            _clienteRepository.Borrar(RegistroSeleccionado);
             return RedirectToPage("/Clientes/Cliente");
         }
-
     }
 }
