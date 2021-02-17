@@ -20,5 +20,6 @@ namespace TiendaBicicleta.Models
         [MaxLength(15, ErrorMessage = "El máximo de carácteres para este campo es de 15")]
         [Display(Name = "Color de Bicicleta")]
         public string Color { get; set; }
+        public List<RegistroVenta> RegistroVentas { get; set; }
     }
 }

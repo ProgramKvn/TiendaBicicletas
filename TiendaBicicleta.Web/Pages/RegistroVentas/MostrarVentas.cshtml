@@ -1,0 +1,34 @@
+﻿@page
+@model TiendaBicicleta.Web.Pages.RegistroVentas.MostrarVentasModel
+@{
+}
+
+<h1>Registro de ventas</h1>
+
+<a class="btn btn-sm btn-success" asp-page="/RegistroVentas/CrearRegistro">Registrar una nueva venta</a>
+<br />
+<br />
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id de registro</th>
+            <th>Id del cliente</th>
+            <th>Id de la bicicleta</th>
+            <th>Options</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.RegistroVentas)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.ClienteId</td>
+                <td>@item.InventarioBicicletaId</td>
+                <td>
+                    <a class="btn btn-sm btn-info" asp-area="" asp-page="/RegistroVentas/EditarRegistro" asp-route-id="@item.Id">Editar</a>
+                    <a class="btn btn-sm btn-info" asp-area="" asp-page="/RegistroVentas/EliminarRegistro" asp-route-id="@item.Id">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TiendaBicicleta.Data;
 
 namespace TiendaBicicleta.Data.Migrations
 {
     [DbContext(typeof(AplicacionDbContext))]
-    partial class AplicacionDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210217000950_SixthMigration")]
+    partial class SixthMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

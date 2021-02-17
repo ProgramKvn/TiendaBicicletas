@@ -5,7 +5,7 @@
 
 <h1>Inventario de bicicletas</h1>
 
-<a class="btn btn-sm btn-success" asp-page="/RegistrarBicicleta">Registrar bicicleta</a>
+<a class="btn btn-sm btn-success" asp-page="/InventarioBicicletas/RegistrarBicicleta">Registrar bicicleta</a>
 <br />
 <br />
 <table class="table table-bordered">
@@ -27,8 +27,8 @@
                 <td>@item.Precio</td>
                 <td>@item.Color</td>
                 <td>
-                    <a class="btn btn-sm btn-info" asp-area="" asp-page="/EditarInventario" asp-route-id="@item.Id">Editar</a>
-                    <a class="btn btn-sm btn-info" asp-area="" asp-page="/EliminarRegistro" asp-route-id="@item.Id">Eliminar</a>
+                    <a class="btn btn-sm btn-info" asp-area="" asp-page="/InventarioBicicletas/EditarInventario" asp-route-id="@item.Id">Editar</a>
+                    <a class="btn btn-sm btn-info" asp-area="" asp-page="/InventarioBicicletas/EliminarRegistro" asp-route-id="@item.Id">Eliminar</a>
                 </td>
             </tr>
         }

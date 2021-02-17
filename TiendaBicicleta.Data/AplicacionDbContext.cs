@@ -14,6 +14,7 @@ namespace TiendaBicicleta.Data
         }
         public DbSet<InventarioBicicleta> InventarioBicicletas { get; set; }
         public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<RegistroVenta> RegistroVentas { get; set; }
         public IEnumerable<object> Cliente { get; internal set; }
     }
 }

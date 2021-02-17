@@ -5,8 +5,8 @@ using TiendaBicicleta.Models;
 
 namespace TiendaBicicleta.Data.Interfaz
 {
-    public interface IClienteRepository : IRepository<Cliente>
+    public interface IRegistroVentaRepository : IRepository<RegistroVenta>
     {
-        void BorrarPorApellidos();
+        void BorrarVenta();
     }
 }

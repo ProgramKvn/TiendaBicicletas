@@ -20,5 +20,6 @@ namespace TiendaBicicleta.Models
         [Required(ErrorMessage = "Necesita llenar este campo")]
         [Display(Name = "Número telefónico del cliente")]
         public int Telefono { get; set; }
+        public List<RegistroVenta> RegistroVentas { get; set; }
     }
 }

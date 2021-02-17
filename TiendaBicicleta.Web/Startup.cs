@@ -25,6 +25,7 @@ namespace TiendaBicicleta.Web
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped<IInventarioBicicletaRepository, InventarioBicicletaRepository>();
             services.AddScoped<IClienteRepository, ClienteRepository>();
+            services.AddScoped<IRegistroVentaRepository, RegistroVentaRepository>();
             services.AddDbContext<AplicacionDbContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddRazorPages().AddRazorRuntimeCompilation();
         }
