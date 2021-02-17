@@ -2,18 +2,26 @@
 @model TiendaBicicleta.Web.Pages.RegistroVentas.CrearRegistroModel
 @{
 }
-
+<h1 class="text-center">Registrar una nueva venta</h1>
 <form method="post">
-    <div class="form-group">
-        <label asp-for="RegistroVenta.ClienteId"></label>
-        <input type="text" class="form-control" asp-for="RegistroVenta.ClienteId" placeholder="Ingresa el precio de la bicicleta aquí">
-        <span class="text-danger" asp-validation-for="RegistroVenta.ClienteId"></span>
+    <div class="modal-dialog modal-content">
+        <div class="modal-body">
+            <div class="form-group">
+                <label asp-for="RegistroVenta.ClienteId"></label>
+                <input type="text" class="form-control" asp-for="RegistroVenta.ClienteId" placeholder="Ingresa el identificador (ID) del cliente aquí">
+                <span class="text-danger" asp-validation-for="RegistroVenta.ClienteId"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="RegistroVenta.InventarioBicicletaId"></label>
+                <input type="text" class="form-control" asp-for="RegistroVenta.InventarioBicicletaId" placeholder="Ingresa el identificador (ID) de la bicicleta aquí">
+                <span class="text-danger" asp-validation-for="RegistroVenta.InventarioBicicletaId"></span>
+            </div>
+            <br />
+            <div style="display: flex; justify-content: space-between;">
+                <button type="submit" class="btn btn-success"><i class="fas fa-save"></i> Guardar cambios</button>
+                <button type="button" class="btn btn-info"><a style="text-decoration: none; color: white;" asp-page="/RegistroVentas/MostrarVentas"><i class="fas fa-arrow-circle-left"></i> Regresar</a></button>
+            </div>
+        </div>
     </div>
-    <div class="form-group">
-        <label asp-for="RegistroVenta.InventarioBicicletaId"></label>
-        <input type="text" class="form-control" asp-for="RegistroVenta.InventarioBicicletaId" placeholder="Ingresa el color de la bicicleta aquí">
-        <span class="text-danger" asp-validation-for="RegistroVenta.InventarioBicicletaId"></span>
-    </div>
-    <button type="submit" class="btn btn-primary">Crear registro</button> <br />
-    <a asp-page="/">Regresar</a>
 </form>

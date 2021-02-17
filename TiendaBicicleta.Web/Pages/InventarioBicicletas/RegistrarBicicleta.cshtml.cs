@@ -32,6 +32,7 @@ namespace TiendaBicicleta.Web.Pages
             _inventarioRepository.Insertar(InventarioBicicleta);
 
             return RedirectToPage("./InventarioBicicletas");
+
         }
     }
 }

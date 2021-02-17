@@ -2,7 +2,14 @@
 @model TiendaBicicleta.Web.Pages.Clientes.EliminarRegistroClienteModel
 @{
 }
+<div class="text-center">
+    <h1>Eliminar el registro del cliente</h1>
+    <p>Está a punto de borrar un registro de la tabla que contiene la información del cliente.</p>
+    <p class="text-danger">¿Está seguro que desea continuar?</p>
 
-<form method="post">
-    <button type="submit">Eliminar</button>
-</form>
+
+    <form method="post">
+        <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Eliminar registro</button>
+        <button type="button" class="btn btn-info"><a style="text-decoration: none; color: white;" asp-page="/Clientes/Cliente"><i class="fas fa-arrow-circle-left"></i> Regresar</a></button>
+    </form>
+</div>

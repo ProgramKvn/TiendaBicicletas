@@ -2,24 +2,34 @@
 @model TiendaBicicleta.Web.Pages.EditarInventarioModel
 @{
 }
-
+<h1 class="text-center">Editar datos de la bicicleta</h1>
 <form method="post">
-    <input type="hidden" asp-for="InventarioBicicleta.Id" />
-    <div class="form-group">
-        <label asp-for="InventarioBicicleta.Modelo"></label>
-        <input type="text" class="form-control" asp-for="InventarioBicicleta.Modelo" placeholder="Ingresa el modelo de bicicleta aquí">
-        <span class="text-danger" asp-validation-for="InventarioBicicleta.Modelo"></span>
+    <div class="modal-dialog modal-content">
+        <div class="modal-body">
+            <input type="hidden" asp-for="InventarioBicicleta.Id" />
+            <div class="form-group">
+                <label asp-for="InventarioBicicleta.Modelo"></label>
+                <input type="text" class="form-control" asp-for="InventarioBicicleta.Modelo" placeholder="Ingresa el modelo de bicicleta aquí">
+                <span class="text-danger" asp-validation-for="InventarioBicicleta.Modelo"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="InventarioBicicleta.Precio"></label>
+                <input type="text" class="form-control" asp-for="InventarioBicicleta.Precio" placeholder="Ingresa el precio de la bicicleta aquí">
+                <span class="text-danger" asp-validation-for="InventarioBicicleta.Precio"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="InventarioBicicleta.Color"></label>
+                <input type="text" class="form-control" asp-for="InventarioBicicleta.Color" placeholder="Ingresa el color de la bicicleta aquí">
+                <span class="text-danger" asp-validation-for="InventarioBicicleta.Color"></span>
+            </div>
+            <br />
+            <div style="display: flex; justify-content: space-between;">
+                <button type="submit" class="btn btn-success"><i class="fas fa-save"></i> Guardar cambios</button>
+                <button type="button" class="btn btn-info"><a style="text-decoration: none; color: white;" asp-page="/InventarioBicicletas/InventarioBicicletas"><i class="fas fa-arrow-circle-left"></i> Regresar</a></button>
+            </div>
+        </div>
+        </div>
     </div>
-    <div class="form-group">
-        <label asp-for="InventarioBicicleta.Precio"></label>
-        <input type="number" class="form-control" asp-for="InventarioBicicleta.Precio" placeholder="Ingresa el precio de la bicicleta aquí">
-        <span class="text-danger" asp-validation-for="InventarioBicicleta.Precio"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="InventarioBicicleta.Color"></label>
-        <input type="text" class="form-control" asp-for="InventarioBicicleta.Color" placeholder="Ingresa el color de la bicicleta aquí">
-        <span class="text-danger" asp-validation-for="InventarioBicicleta.Color"></span>
-    </div>
-    <button type="submit" class="btn btn-primary">Guardar cambios</button> <br />
-    <a asp-page="/InventarioBicicletas">Regresar</a>
 </form>
